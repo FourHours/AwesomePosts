@@ -1,0 +1,59 @@
+# AwsomePosts
+The goal was to design and implement a clean and testable MVVM production application.
+
+[Project requirements](https://github.com/Babylonpartners/iOS-Interview-Demo) are detailed here.
+
+
+### Architecture - MVVM
+* Thin ViewControllers
+   * No mutable states
+   * No callbacks
+   * PostsViewController: 86 lines
+   * PostDetailTableViewController: 32 lines
+* Testable View Model 
+   * Supply all ViewControllers states
+   * Capture all business logics
+   * Ability to init with mock data for Unit Test
+   * Unit Test demoed by **testFindUserById**
+* Unified Error Handler
+   * Protocol ErrorHandler with default behavior
+   * Custom behavior for ViewContollers
+* Dependency Injection
+   * External dependencies are injected for all ViewControllers
+   * Captured in dedicated **struct InjectedProperty**
+* Resource Abstraction
+   * Extendable self-contained generic Resource struct
+* Offline support
+   * Cache data with CoreData framework
+   * Persistable protocol for extension 
+### User Interface
+* Pull to refresh
+* Auto resizing UITableViewCell
+* Dynamic Font size
+### Discussion
+* Preload or on demand lazy loading remote resources
+  * The app loads all 3 resources at one go to avoid waiting while user navigate to detail screen
+  * Static remote resources
+  * Few resources
+  * While applicable, should prefer on-demand requests 
+* Third party library
+   * Conditions to integrate third party library
+### Technical Debt
+* Localization
+* UI styling
+* Full code coverage Unit Tests
+* UI Tests
+* iPhone Only
+* Lack of custom application error type
+* Comments and Documentation
+* CI integration 
+### Developement Environment
+* Xcode 8.3
+* Swift 3
+### Cocoapods Dependencies
+* pod "PromiseKit", "~> 4.0"
+* pod 'ObjectMapper', '~> 2.2'
+* pod 'MBProgressHUD', '~> 1.0.0'
+* pod 'ReactiveCocoa', '~> 5.0.0'
+* pod 'Static', git: 'https://github.com/venmo/Static'
+* pod "MagicalRecord"

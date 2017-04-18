@@ -1,0 +1,54 @@
+PODS:
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - MBProgressHUD (1.0.0)
+  - ObjectMapper (2.2.5)
+  - PromiseKit (4.1.7):
+    - PromiseKit/Foundation (= 4.1.7)
+    - PromiseKit/QuartzCore (= 4.1.7)
+    - PromiseKit/UIKit (= 4.1.7)
+  - PromiseKit/CorePromise (4.1.7)
+  - PromiseKit/Foundation (4.1.7):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.1.7):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.1.7):
+    - PromiseKit/CorePromise
+  - ReactiveCocoa (5.0.2):
+    - ReactiveSwift (~> 1.1)
+  - ReactiveSwift (1.1.1):
+    - Result (~> 3.2)
+  - Result (3.2.1)
+  - Static (2.0.1)
+
+DEPENDENCIES:
+  - MagicalRecord
+  - MBProgressHUD (~> 1.0.0)
+  - ObjectMapper (~> 2.2)
+  - PromiseKit (~> 4.0)
+  - ReactiveCocoa (~> 5.0.0)
+  - Static (from `https://github.com/venmo/Static`)
+
+EXTERNAL SOURCES:
+  Static:
+    :git: https://github.com/venmo/Static
+
+CHECKOUT OPTIONS:
+  Static:
+    :commit: 321e997b9c2edc5d38aa0b007f2861ba457f13ed
+    :git: https://github.com/venmo/Static
+
+SPEC CHECKSUMS:
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  ReactiveCocoa: 17bc0968fd6c69c72dba8b272bc3c4700a0d3ea3
+  ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  Static: a8675f1e49645ab7ed12b2677aeae22f973d6a2e
+
+PODFILE CHECKSUM: 4c68621be91ff1c24ed2939be95b20666e69c11c
+
+COCOAPODS: 1.2.0
