@@ -1,4 +1,4 @@
-# AwsomePosts
+# AwesomePosts
 The goal was to design and implement a clean and testable MVVM production application.
 
 [Project requirements](https://github.com/Babylonpartners/iOS-Interview-Demo) are detailed here.
