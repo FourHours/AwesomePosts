@@ -12,6 +12,7 @@ target 'AwesomePosts' do
   pod 'ReactiveCocoa', '~> 5.0.0'
   pod 'Static', git: 'https://github.com/venmo/Static'
   pod "MagicalRecord"
+  pod "KDTree"
 
   target 'AwesomePostsTests' do
     inherit! :search_paths
