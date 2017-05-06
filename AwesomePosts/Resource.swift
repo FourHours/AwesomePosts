@@ -10,6 +10,15 @@ import Foundation
 import PromiseKit
 import ObjectMapper
 
+struct TextFieldResource {}
+struct LocationResource {}
+struct FileResource {}
+struct HttpResource {}
+struct UserDefaultResource {}
+struct RealmResource {}
+
+
+
 struct Resource<T> where T:Mappable {
     let url: String
     
