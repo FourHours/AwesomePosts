@@ -8,19 +8,19 @@
 import ObjectMapper
 
 class Person: Mappable {
-    var firstName:          String?
-    var lastName:           String?
+    var title:          String?
+    var detailText:           String?
     
     required init?(map: Map) {
     }
     
-    init(firstName: String, lastName: String) {
-        self.firstName = firstName
-        self.lastName = lastName
+    init(title: String, detailText: String) {
+        self.title = title
+        self.detailText = detailText
     }
     
     func mapping(map: Map) {
-        firstName       <- map["firstName"]
-        lastName        <- map["lastName"]
+        title               <- map["title"]
+        detailText          <- map["detailText"]
     }
 }

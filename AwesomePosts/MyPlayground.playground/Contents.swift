@@ -10,7 +10,7 @@ class Person: Mappable {
     required init?(map: Map) {
     }
     
-    init(firstName: String, lastName: String) {
+    required init(firstName: String, lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
     }
@@ -22,3 +22,7 @@ class Person: Mappable {
 }
 
 
+var a = Person.self
+print(a)
+
+var b = a.init(firstName: "b", lastName: "d")

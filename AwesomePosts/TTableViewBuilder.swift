@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import ObjectMapper
 
-struct TableDataSource {
+struct TTableDataSource {
     struct TableSection {
         var title: String?
         var rows: [Mappable]?
@@ -48,24 +48,26 @@ struct TableDataSource {
 
 }
 
-class TableViewBuilder: NSObject {
+class TTableViewBuilder: NSObject {
     enum TableCellType {
         case Value1
         case Nib
+        case Dynamic
     }
     
-    var dataSource:             TableDataSource
+    var dataSource:             TTableDataSource!
     var selection:              ((IndexPath) -> Void)?
-    var bindingTableView:       UITableView?
+    var bindingTableView:       UITableView!
     var cellType =              TableCellType.Value1
     var debugging =             false
+    var customClassName:        String!
     
     
-    init(source: TableDataSource) {
+    init(source: TTableDataSource) {
         dataSource = source
     }
     
-    func bind(tableView: UITableView) -> TableViewBuilder {
+    func bind(_ tableView: UITableView) -> TTableViewBuilder {
         bindingTableView = tableView
         
         bindingTableView?.delegate = self
@@ -74,29 +76,45 @@ class TableViewBuilder: NSObject {
         switch cellType {
         case .Value1:
             bindingTableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellItentifier())
+        case .Nib:
+            if debugging {
+                print("cellClassName = \(customClassName)")
+            }
+            bindingTableView?.register(UINib(nibName: customClassName, bundle: nil), forCellReuseIdentifier: customClassName)
         default: break
         }
+        
+        
         
         return self
     }
     
-    func onSelection(sel: @escaping (IndexPath) -> Void) -> TableViewBuilder {
+    func onSelection(_ sel: @escaping (IndexPath) -> Void) -> TTableViewBuilder {
         selection = sel
         return self
     }
     
-    func debug(_ debug: Bool) -> TableViewBuilder {
+    func customTableCellName(_ name: String) -> TTableViewBuilder {
+        
+        if debugging {
+            print("customTableCellName = \(name)")
+        }
+        customClassName = name
+        return self
+    }
+    
+    func debug(_ debug: Bool) -> TTableViewBuilder {
         debugging = debug
         return self
     }
     
-    func cellType(_ type: TableCellType) -> TableViewBuilder{
+    func cellType(_ type: TableCellType) -> TTableViewBuilder{
         cellType = type
         return self
     }
 }
 
-extension TableViewBuilder: UITableViewDelegate, UITableViewDataSource {
+extension TTableViewBuilder: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if(debugging) {
             print("numberOfSections = \(dataSource.numberOfSections())")
@@ -118,13 +136,13 @@ extension TableViewBuilder: UITableViewDelegate, UITableViewDataSource {
         
         switch cellType {
         case .Value1:
-            let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellItentifier())
-            let element = dataSource[indexPath] as? TableCell
-            cell.textLabel?.text = element?.title
-            cell.detailTextLabel?.text = element?.detailText
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellItentifier(), for: indexPath)
+            let tableCell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellItentifier())
+            tableCell.configure(row: dataSource[indexPath])
+            return tableCell
+            
+        case .Nib, .Dynamic:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TCustomTableViewCell", for: indexPath)
+            cell.configure(row: dataSource[indexPath])
             return cell
         }
     }
@@ -137,3 +155,23 @@ extension TableViewBuilder: UITableViewDelegate, UITableViewDataSource {
         return String(describing: type(of: self))
     }
 }
+
+/*
+ let p1 = Person(title: "John", detailText: "a")
+ let p2 = Person(title: "Kate", detailText: "b")
+ 
+ let persons = Array(arrayLiteral: p1,p2)
+ 
+ let dataSource = TTableDataSource(sections: [TTableDataSource.TableSection(title: "Person", rows: persons)])
+ 
+ 
+ builder = TTableViewBuilder(source: dataSource)
+ .debug(true)
+ .cellType(.Dynamic)
+ .customTableCellName("TCustomTableViewCell")
+ .onSelection { (indexPath) -> Void in
+ print("You selected cell #\(indexPath.row)!")
+ }
+ .bind(tableView)
+ }
+ */

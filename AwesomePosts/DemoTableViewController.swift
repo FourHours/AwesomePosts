@@ -9,26 +9,27 @@
 import UIKit
 
 class DemoTableViewController: UITableViewController {
-    var builder: TableViewBuilder?
+    var builder: TTableViewBuilder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let p1 = TableCell(title: "John", detailText: "a")
-        let p2 = TableCell(title: "Kate", detailText: "b")
+        let p1 = Person(title: "John", detailText: "a")
+        let p2 = Person(title: "Kate", detailText: "b")
         
         let persons = Array(arrayLiteral: p1,p2)
         
-        let dataSource = TableDataSource(sections: [TableDataSource.TableSection(title: "Person", rows: persons)])
+        let dataSource = TTableDataSource(sections: [TTableDataSource.TableSection(title: "Person", rows: persons)])
         
         
-        builder = TableViewBuilder(source: dataSource)
-            .cellType(.Value1)
+        builder = TTableViewBuilder(source: dataSource)
             .debug(true)
+            .cellType(.Dynamic)
+            .customTableCellName("TCustomTableViewCell")
             .onSelection { (indexPath) -> Void in
                 print("You selected cell #\(indexPath.row)!")
             }
-            .bind(tableView: tableView)
+            .bind(tableView)
     }
 
 }
