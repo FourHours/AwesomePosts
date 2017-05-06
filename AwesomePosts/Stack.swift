@@ -6,24 +6,34 @@
 //  Copyright © 2017 Q Zhuang. All rights reserved.
 //
 
-class Stack<T> {
-    var container = [T]()
+struct Stack<T> {
+    private lazy var container:[T] = {
+       return [T]()
+    }()
     
-    init(_ array: [T]) {
-        container += array
-    }
-    
-    func push(_ element: T) {
+    mutating func push(_ element: T) {
         container.append(element)
     }
     
-    func popup() -> T? {
+    mutating func popup() -> T? {
         return container.popLast()
     }
     
-    func top(_ number: Int) -> [T]? {
+    mutating func top(_ number: Int) -> [T]? {
         //ArraySlice
         if number > container.count { return .none }
         return Array(container.suffix(number))
     }
 }
+
+struct Queue {
+    func enqueue(element: Int) {
+        
+    }
+    
+    func dequeue() -> Int {
+        return 0
+    }
+}
+
+

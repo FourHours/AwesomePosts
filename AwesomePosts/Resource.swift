@@ -17,7 +17,22 @@ struct HttpResource {}
 struct UserDefaultResource {}
 struct RealmResource {}
 
-
+/*
+ Http.get(url)
+ .onSuccess
+ .onFailure
+ .onHttpCode(200,handler)
+ .start
+ 
+ Http.post(url)
+ .onSuccess(result)
+ .start
+ 
+ 
+ TableViewDataSource(table,datasource)
+ .onCell
+ .onCellSelected
+ */
 
 struct Resource<T> where T:Mappable {
     let url: String

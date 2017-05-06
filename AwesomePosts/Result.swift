@@ -19,6 +19,10 @@ enum Result<T> {
         case let .failure(err): return .failure(err)
         }
     }
+
+    func start() -> Result {
+        return self
+    }
     
 //    func errorHandler<U>(result: (Result<U>)) -> Void {
 //        
