@@ -18,7 +18,7 @@ enum TBackendError: Error {
     case objectSerialization(reason: String)
 }
 
-class THttpResource {
+class THttpConnection {
     enum method {
         case get
         case post

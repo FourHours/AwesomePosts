@@ -9,10 +9,10 @@
 import UIKit
 import ObjectMapper
 
-class TDemoTableViewController: UITableViewController, TCodeInjectable {
+class TDemoTableViewController: UITableViewController, TInjectProperty {
     var props: Dictionary<String, Any>?
 
-    var builder: TTableViewBuilder?
+    var builder: TTableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class TDemoTableViewController: UITableViewController, TCodeInjectable {
         let dataSource = TTableDataSource(sections: [TSection(title: "Person", rows: persons)])
         
         
-        builder = TTableViewBuilder(source: dataSource)
+        builder = TTableView(source: dataSource)
             .debug(true)
             .cellType(.Dynamic)
             .customTableCellName("TCustomTableViewCell")
@@ -34,7 +34,7 @@ class TDemoTableViewController: UITableViewController, TCodeInjectable {
             }
             .bind(tableView)
         
-        THttpResource()
+        THttpConnection()
             .debug(true)
             .url("http://example.com/")
             .onStringResponseHandler { (json) in

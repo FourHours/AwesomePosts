@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol TCodeInjectable: class {
+protocol TInjectProperty: class {
     var props: Dictionary<String, Any>? {set get}
 }
 

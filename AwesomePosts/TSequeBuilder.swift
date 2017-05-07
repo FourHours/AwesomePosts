@@ -41,7 +41,7 @@ class TSequeBuilder {
     }
     
     func push() {
-        guard let vc = UIStoryboard(name:self.storyboardName, bundle:nil).instantiateViewController(withIdentifier: "identifier") as? TCodeInjectable
+        guard let vc = UIStoryboard(name:self.storyboardName, bundle:nil).instantiateViewController(withIdentifier: "identifier") as? TInjectProperty
             else {
             print("Could not instantiate view controller with identifier of type SecondViewController")
             return
@@ -52,7 +52,7 @@ class TSequeBuilder {
     }
     
     func present() {
-        guard let vc = UIStoryboard(name:self.storyboardName, bundle:nil).instantiateViewController(withIdentifier: "identifier") as? TCodeInjectable
+        guard let vc = UIStoryboard(name:self.storyboardName, bundle:nil).instantiateViewController(withIdentifier: "identifier") as? TInjectProperty
             else {
                 print("Could not instantiate view controller with identifier of type SecondViewController")
                 return

@@ -50,7 +50,7 @@ struct TTableDataSource {
 
 typealias TSection = TTableDataSource.TableSection
 
-class TTableViewBuilder: NSObject {
+class TTableView: NSObject {
     enum TableCellType {
         case Value1
         case Nib
@@ -69,7 +69,7 @@ class TTableViewBuilder: NSObject {
         dataSource = source
     }
     
-    func bind(_ tableView: UITableView) -> TTableViewBuilder {
+    func bind(_ tableView: UITableView) -> Self {
         bindingTableView = tableView
         
         bindingTableView?.delegate = self
@@ -91,12 +91,12 @@ class TTableViewBuilder: NSObject {
         return self
     }
     
-    func onSelection(_ sel: @escaping (IndexPath, Mappable) -> Void) -> TTableViewBuilder {
+    func onSelection(_ sel: @escaping (IndexPath, Mappable) -> Void) -> Self {
         selection = sel
         return self
     }
     
-    func customTableCellName(_ name: String) -> TTableViewBuilder {
+    func customTableCellName(_ name: String) -> Self {
         
         if debugging {
             print("customTableCellName = \(name)")
@@ -105,18 +105,18 @@ class TTableViewBuilder: NSObject {
         return self
     }
     
-    func debug(_ debug: Bool) -> TTableViewBuilder {
+    func debug(_ debug: Bool) -> Self {
         debugging = debug
         return self
     }
     
-    func cellType(_ type: TableCellType) -> TTableViewBuilder{
+    func cellType(_ type: TableCellType) -> Self{
         cellType = type
         return self
     }
 }
 
-extension TTableViewBuilder: UITableViewDelegate, UITableViewDataSource {
+extension TTableView: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if(debugging) {
             print("numberOfSections = \(dataSource.numberOfSections())")

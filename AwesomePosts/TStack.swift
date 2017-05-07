@@ -6,7 +6,7 @@
 //  Copyright © 2017 Q Zhuang. All rights reserved.
 //
 
-struct Stack<T> {
+struct TStack<T> {
     private lazy var container:[T] = {
        return [T]()
     }()
@@ -26,7 +26,7 @@ struct Stack<T> {
     }
 }
 
-struct Queue {
+struct TQueue {
     func enqueue(element: Int) {
         
     }
