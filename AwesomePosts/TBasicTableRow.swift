@@ -7,9 +7,9 @@
 //
 import ObjectMapper
 
-class Person: Mappable {
-    var title:          String?
-    var detailText:           String?
+class TBasicTableRow: Mappable {
+    var title:                  String?
+    var detailText:             String?
     
     required init?(map: Map) {
     }

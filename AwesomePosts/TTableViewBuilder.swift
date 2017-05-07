@@ -48,6 +48,8 @@ struct TTableDataSource {
 
 }
 
+typealias TSection = TTableDataSource.TableSection
+
 class TTableViewBuilder: NSObject {
     enum TableCellType {
         case Value1
@@ -56,7 +58,7 @@ class TTableViewBuilder: NSObject {
     }
     
     var dataSource:             TTableDataSource!
-    var selection:              ((IndexPath) -> Void)?
+    var selection:              ((IndexPath, Mappable) -> Void)?
     var bindingTableView:       UITableView!
     var cellType =              TableCellType.Value1
     var debugging =             false
@@ -89,7 +91,7 @@ class TTableViewBuilder: NSObject {
         return self
     }
     
-    func onSelection(_ sel: @escaping (IndexPath) -> Void) -> TTableViewBuilder {
+    func onSelection(_ sel: @escaping (IndexPath, Mappable) -> Void) -> TTableViewBuilder {
         selection = sel
         return self
     }
@@ -148,7 +150,7 @@ extension TTableViewBuilder: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selection?(indexPath)
+        selection?(indexPath, dataSource[indexPath])
     }
     
     func cellItentifier() -> String {

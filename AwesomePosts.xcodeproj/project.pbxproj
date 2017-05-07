@@ -10,8 +10,8 @@
 		070C738F1EA133CB0040FE33 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070C738E1EA133CB0040FE33 /* PostTableViewCell.xib */; };
 		070C73911EA159980040FE33 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070C73901EA159980040FE33 /* Resource.swift */; };
 		070C73971EA1DD860040FE33 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070C73961EA1DD860040FE33 /* ErrorHandler.swift */; };
-		071257B01EBE128500AA029E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071257AF1EBE128500AA029E /* Person.swift */; };
-		071257B21EBE19C300AA029E /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071257B11EBE19C300AA029E /* DemoTableViewController.swift */; };
+		071257B01EBE128500AA029E /* TBasicTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071257AF1EBE128500AA029E /* TBasicTableRow.swift */; };
+		071257B21EBE19C300AA029E /* TDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071257B11EBE19C300AA029E /* TDemoTableViewController.swift */; };
 		071F1F3E1E97C7AF00A83340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F1F3D1E97C7AF00A83340 /* AppDelegate.swift */; };
 		071F1F431E97C7AF00A83340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071F1F411E97C7AF00A83340 /* Main.storyboard */; };
 		071F1F461E97C7AF00A83340 /* AwesomePosts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 071F1F441E97C7AF00A83340 /* AwesomePosts.xcdatamodeld */; };
@@ -31,6 +31,8 @@
 		0799F91E1EBE5569004A2E5A /* TCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0799F91D1EBE5569004A2E5A /* TCustomTableViewCell.xib */; };
 		0799F9201EBE5D13004A2E5A /* TCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799F91F1EBE5D13004A2E5A /* TCustomTableViewCell.swift */; };
 		0799F9221EBE6A66004A2E5A /* TBundleFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799F9211EBE6A66004A2E5A /* TBundleFile.swift */; };
+		0799F9241EBEECEC004A2E5A /* TSequeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799F9231EBEECEC004A2E5A /* TSequeBuilder.swift */; };
+		0799F9261EBEF0EF004A2E5A /* THttpResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799F9251EBEF0EF004A2E5A /* THttpResource.swift */; };
 		07A06E2A1EAD3B47003BA007 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A06E291EAD3B47003BA007 /* Stack.swift */; };
 		07B619B71E996F1B009C1795 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B619B61E996F1B009C1795 /* PostDetailTableViewController.swift */; };
 		07B619B91E9972E4009C1795 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B619B81E9972E4009C1795 /* User.swift */; };
@@ -40,6 +42,7 @@
 		07DA9D491EA297B20071E70D /* PostCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA9D471EA297B20071E70D /* PostCoreData+CoreDataClass.swift */; };
 		07DA9D4A1EA297B20071E70D /* PostCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA9D481EA297B20071E70D /* PostCoreData+CoreDataProperties.swift */; };
 		07E830E41E97CEEA0039E268 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E830E31E97CEEA0039E268 /* Post.swift */; };
+		07ED37231EBF20E1006784B6 /* TCodeInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED37221EBF20E1006784B6 /* TCodeInjectable.swift */; };
 		45F807EEA6AD5ED76CCAC00D /* Pods_AwesomePostsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F55AAD1778E32714CBCDCFC /* Pods_AwesomePostsUITests.framework */; };
 		72BCD20BDD2A2C014BB27F03 /* Pods_AwesomePostsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5CA7479F4000880082EA1B2 /* Pods_AwesomePostsTests.framework */; };
 		E32493A7D518E95B8DA68AB5 /* Pods_AwesomePosts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A768E20120351CA10E0A8 /* Pods_AwesomePosts.framework */; };
@@ -68,8 +71,8 @@
 		070C73901EA159980040FE33 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		070C73961EA1DD860040FE33 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		071257AE1EBE109500AA029E /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		071257AF1EBE128500AA029E /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		071257B11EBE19C300AA029E /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
+		071257AF1EBE128500AA029E /* TBasicTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBasicTableRow.swift; sourceTree = "<group>"; };
+		071257B11EBE19C300AA029E /* TDemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDemoTableViewController.swift; sourceTree = "<group>"; };
 		071F1F3A1E97C7AF00A83340 /* AwesomePosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomePosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		071F1F3D1E97C7AF00A83340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		071F1F421E97C7AF00A83340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 		0799F91D1EBE5569004A2E5A /* TCustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCustomTableViewCell.xib; sourceTree = "<group>"; };
 		0799F91F1EBE5D13004A2E5A /* TCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCustomTableViewCell.swift; sourceTree = "<group>"; };
 		0799F9211EBE6A66004A2E5A /* TBundleFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBundleFile.swift; sourceTree = "<group>"; };
+		0799F9231EBEECEC004A2E5A /* TSequeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSequeBuilder.swift; sourceTree = "<group>"; };
+		0799F9251EBEF0EF004A2E5A /* THttpResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THttpResource.swift; sourceTree = "<group>"; };
 		07A06E291EAD3B47003BA007 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		07B619B61E996F1B009C1795 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		07B619B81E9972E4009C1795 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 		07DA9D471EA297B20071E70D /* PostCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PostCoreData+CoreDataClass.swift"; path = "AwesomePosts/PostCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		07DA9D481EA297B20071E70D /* PostCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PostCoreData+CoreDataProperties.swift"; path = "AwesomePosts/PostCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07E830E31E97CEEA0039E268 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		07ED37221EBF20E1006784B6 /* TCodeInjectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCodeInjectable.swift; sourceTree = "<group>"; };
 		1B1A768E20120351CA10E0A8 /* Pods_AwesomePosts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomePosts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		338D06F704E50BD2967717F3 /* Pods-AwesomePostsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomePostsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomePostsTests/Pods-AwesomePostsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EBFA90ED3A03514F1407744 /* Pods-AwesomePostsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomePostsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomePostsTests/Pods-AwesomePostsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +222,6 @@
 				07E830E31E97CEEA0039E268 /* Post.swift */,
 				07B619B81E9972E4009C1795 /* User.swift */,
 				07B619BA1E997AC5009C1795 /* Comment.swift */,
-				071257AF1EBE128500AA029E /* Person.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -242,12 +247,16 @@
 			isa = PBXGroup;
 			children = (
 				0737C35D1EBDBB42005E888A /* BuilderPattern.swift */,
-				0737C35F1EBDCAB4005E888A /* TTableViewBuilder.swift */,
 				0799F91B1EBE28BE004A2E5A /* TTableCell.swift */,
+				071257AF1EBE128500AA029E /* TBasicTableRow.swift */,
 				0799F91D1EBE5569004A2E5A /* TCustomTableViewCell.xib */,
 				0799F91F1EBE5D13004A2E5A /* TCustomTableViewCell.swift */,
-				071257B11EBE19C300AA029E /* DemoTableViewController.swift */,
+				071257B11EBE19C300AA029E /* TDemoTableViewController.swift */,
 				0799F9211EBE6A66004A2E5A /* TBundleFile.swift */,
+				0799F9231EBEECEC004A2E5A /* TSequeBuilder.swift */,
+				0737C35F1EBDCAB4005E888A /* TTableViewBuilder.swift */,
+				0799F9251EBEF0EF004A2E5A /* THttpResource.swift */,
+				07ED37221EBF20E1006784B6 /* TCodeInjectable.swift */,
 			);
 			name = DesignPattern;
 			sourceTree = "<group>";
@@ -617,21 +626,24 @@
 				07DA9D4A1EA297B20071E70D /* PostCoreData+CoreDataProperties.swift in Sources */,
 				076695751EA260BC0012CFF9 /* Persistable.swift in Sources */,
 				071F1F461E97C7AF00A83340 /* AwesomePosts.xcdatamodeld in Sources */,
-				071257B01EBE128500AA029E /* Person.swift in Sources */,
+				071257B01EBE128500AA029E /* TBasicTableRow.swift in Sources */,
 				071F1F3E1E97C7AF00A83340 /* AppDelegate.swift in Sources */,
 				0799F9201EBE5D13004A2E5A /* TCustomTableViewCell.swift in Sources */,
 				07B619BB1E997AC5009C1795 /* Comment.swift in Sources */,
 				07632FA41E990BDC00DD72B6 /* Configuration.swift in Sources */,
 				0737C3601EBDCAB4005E888A /* TTableViewBuilder.swift in Sources */,
 				07E830E41E97CEEA0039E268 /* Post.swift in Sources */,
+				0799F9241EBEECEC004A2E5A /* TSequeBuilder.swift in Sources */,
 				0799F91C1EBE28BE004A2E5A /* TTableCell.swift in Sources */,
 				0737C35E1EBDBB42005E888A /* BuilderPattern.swift in Sources */,
 				07632FA61E9956BD00DD72B6 /* PostTableViewCell.swift in Sources */,
 				070C73971EA1DD860040FE33 /* ErrorHandler.swift in Sources */,
 				0799F9221EBE6A66004A2E5A /* TBundleFile.swift in Sources */,
+				07ED37231EBF20E1006784B6 /* TCodeInjectable.swift in Sources */,
 				07DA9D491EA297B20071E70D /* PostCoreData+CoreDataClass.swift in Sources */,
 				07871ECD1EA40F5E002E629F /* AppliationErrorType.swift in Sources */,
-				071257B21EBE19C300AA029E /* DemoTableViewController.swift in Sources */,
+				071257B21EBE19C300AA029E /* TDemoTableViewController.swift in Sources */,
+				0799F9261EBEF0EF004A2E5A /* THttpResource.swift in Sources */,
 				07B619B91E9972E4009C1795 /* User.swift in Sources */,
 				07A06E2A1EAD3B47003BA007 /* Stack.swift in Sources */,
 				07D884D91EA0D1D5007E75DD /* PostDetailTableViewCell.swift in Sources */,

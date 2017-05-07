@@ -18,8 +18,9 @@ class TCustomTableViewCell: UITableViewCell{
     public static func identifier() -> String {
         return String(describing: type(of: self))
     }
+    
     func configure(row: Mappable) {
-        if let person = row as? Person {
+        if let person = row as? TBasicTableRow {
             headline?.text = person.title
         }
     }

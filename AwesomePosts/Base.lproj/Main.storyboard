@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8mw-hB-weS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9TQ-Fz-pSg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,12 +45,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cv-CH-1Rx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066.4000000000001" y="253.2233883058471"/>
+            <point key="canvasLocation" x="3005.5999999999999" y="253.2233883058471"/>
         </scene>
         <!--Demo Table View Controller-->
         <scene sceneID="Qpx-1h-ytm">
             <objects>
-                <tableViewController id="8mw-hB-weS" customClass="DemoTableViewController" customModule="AwesomePosts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8mw-hB-weS" customClass="TDemoTableViewController" customModule="AwesomePosts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gEQ-nP-eET">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,10 +78,11 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
+                    <navigationItem key="navigationItem" id="AA7-G0-1V9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIG-f5-2DU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-172" y="224"/>
+            <point key="canvasLocation" x="564" y="-266.71664167916043"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Jy-i3-6wv">
@@ -99,7 +100,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcj-oj-ZHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="272.11394302848578"/>
+            <point key="canvasLocation" x="2167.1999999999998" y="272.11394302848578"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MBN-81-0nc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9TQ-Fz-pSg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AtA-Eq-FEa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8mw-hB-weS" kind="relationship" relationship="rootViewController" id="7RI-yt-YhQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEf-nV-SJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375.19999999999999" y="-267.61619190404798"/>
         </scene>
     </scenes>
 </document>

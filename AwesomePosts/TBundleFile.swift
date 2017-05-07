@@ -33,7 +33,10 @@ class TBundleFile {
     
     func start() -> Void {
         guard let path = Bundle.main.path(forResource: fileName, ofType: ext)
-            else { return }
+            else {
+                fatalError("init(coder:) has not been implemented")
+                return
+        }
         
         switch self.type {
         case .dictionary:

@@ -19,7 +19,7 @@ extension TTableCell {
 
 extension TTableCell where Self: UITableViewCell {
     public func configure(row: Mappable) {
-        if let person = row as? Person {
+        if let person = row as? TBasicTableRow {
             textLabel?.text = person.title
         }
 //        textLabel?.text = row.text
