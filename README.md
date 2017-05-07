@@ -3,7 +3,29 @@ The goal was to design and implement a clean and testable MVVM production applic
 
 [Project requirements] are detailed here.
 
-
+### TTableViewBuilder Sample
+        builder = TTableViewBuilder(source: dataSource)
+            .debug(true)
+            .cellType(.Dynamic)
+            .customTableCellName("TCustomTableViewCell")
+            .onSelection { (indexPath, emlement) -> Void in
+                print("You selected cell #\(indexPath.row)!")
+            }
+            .bind(tableView)
+### THttpResource Sample
+        THttpResource()
+            .debug(true)
+            .url("http://example.com/")
+            .onStringResponseHandler { (json) in
+                let list = Mapper<TBasicTableRow>().mapArray(JSONString: json)
+            }
+            .onDataResponseHandler({ (data) in
+                print(data)
+            })
+            .onErrorHandler({ (error) in
+                print(error.localizedDescription)
+            })
+            .start()
 ### Architecture - MVVM
 * Thin ViewControllers
    * No mutable states
