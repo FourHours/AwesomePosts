@@ -31,6 +31,11 @@ The goal was to design and implement a clean and testable MVVM production applic
                 print(error.localizedDescription)
             })
             .start()
+### ObjectMapper Sample
+         let user = Mapper<User>().map(JSONString: JSONString)
+         let JSONString = Mapper().toJSONString(user, prettyPrint: true)
+         let list = Mapper<TBasicTableRow>().mapArray(JSONString: json)
+
 ### Architecture - MVVM
 * Thin ViewControllers
    * No mutable states
