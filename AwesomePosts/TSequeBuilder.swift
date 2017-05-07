@@ -25,8 +25,8 @@ import UIKit
 
 class TSequeBuilder {
     var destViewController: String
-    var props:              Dictionary<String, Any>
     var source:             UIViewController
+    var props:              Dictionary<String, Any>
     var storyboardName =    "Main"
     
     init(source: UIViewController, dest: String, props: Dictionary<String, Any>) {

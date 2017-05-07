@@ -30,12 +30,26 @@ class TBundleFile {
         self.type = type
         return self
     }
+
+    func onSuccessDictionayHandler(_ handler: @escaping ([String: AnyObject]) -> Void) -> TBundleFile {
+        onSuccessDictionayHandler = handler
+        return self
+    }
+    
+    func onSuccessArrayHandler(_ handler: @escaping ([Any]) -> Void) -> TBundleFile {
+        onSuccessArrayHandler = handler
+        return self
+    }
+    
+    func onFailure() -> TBundleFile {
+        return self
+    }
+
     
     func start() -> Void {
         guard let path = Bundle.main.path(forResource: fileName, ofType: ext)
             else {
                 fatalError("init(coder:) has not been implemented")
-                return
         }
         
         switch self.type {
@@ -49,23 +63,17 @@ class TBundleFile {
             }
         }
     }
-    
-    func onSuccess(handler: @escaping ([String: AnyObject]) -> Void) -> TBundleFile {
-        onSuccessDictionayHandler = handler
-        return self
-    }
-    
-    func onFailure() -> TBundleFile {
-        return self
-    }
 }
 
 func test() {
-    TBundleFile(fileName: "a", ext: "b")
+    TBundleFile(fileName: "product", ext: "pist")
         .dataType(.dictionary)
-        .onSuccess { (array) in
-            print(array)
+        .onSuccessDictionayHandler { (dic) in
+            print(dic)
         }
+        .onSuccessArrayHandler({ (array) in
+            print(array)
+        })
         .onFailure()
         .start()
  
