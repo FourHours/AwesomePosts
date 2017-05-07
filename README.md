@@ -3,6 +3,40 @@ The goal was to design and implement a clean and testable MVVM production applic
 
 [Project requirements] are detailed here.
 
+### TTableViewBuilder Sample
+        let p1 = TBasicTableRow(title: "John", detailText: "a")
+        let p2 = TBasicTableRow(title: "Kate", detailText: "b")        
+        let persons = Array(arrayLiteral: p1,p2)        
+        let dataSource = TTableDataSource(sections: [TSection(title: "Person", rows: persons)])
+        
+        builder = TTableViewBuilder(source: dataSource)
+            .debug(true)
+            .cellType(.Dynamic)
+            .customTableCellName("TCustomTableViewCell")
+            .onSelection { (indexPath, emlement) -> Void in
+                print("You selected cell #\(indexPath.row)!")
+            }
+            .bind(tableView)
+### THttpResource Sample
+        THttpResource()
+            .debug(true)
+            .url("http://example.com/")
+            .onStringResponseHandler { (json) in
+                let list = Mapper<TBasicTableRow>().mapArray(JSONString: json)
+            }
+            .onDataResponseHandler({ (data) in
+                print(data)
+            })
+            .onErrorHandler({ (error) in
+                print(error.localizedDescription)
+            })
+            .start()
+### TSequeBuilder Sample
+
+### ObjectMapper Sample
+         let user = Mapper<User>().map(JSONString: JSONString)
+         let JSONString = Mapper().toJSONString(user, prettyPrint: true)
+         let list = Mapper<TBasicTableRow>().mapArray(JSONString: json)
 
 ### Architecture - MVVM
 * Thin ViewControllers
