@@ -31,6 +31,17 @@ The goal was to design and implement a clean and testable MVVM production applic
                 print(error.localizedDescription)
             })
             .start()
+### TBundleFile Sample
+    TBundleFile(fileName: "product", ext: "pist")
+        .dataType(.dictionary)
+        .onSuccessDictionayHandler { (dic) in
+            print(dic)
+        }
+        .onSuccessArrayHandler({ (array) in
+            print(array)
+        })
+        .onFailure()
+        .start()
 ### TSequeBuilder Sample
 
 ### ObjectMapper Sample
