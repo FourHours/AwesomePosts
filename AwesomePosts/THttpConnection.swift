@@ -38,27 +38,27 @@ class THttpConnection {
         self.url = URL
     }
     
-    func url(_ URL: String) -> THttpResource {
+    func url(_ URL: String) -> Self {
         url = URL
         return self
     }
     
-    func debug(_ debug: Bool) -> THttpResource {
+    func debug(_ debug: Bool) -> Self {
         debugging = debug
         return self
     }
     
-    func onDataResponseHandler(_ handler: @escaping (Data) -> Void) -> THttpResource {
+    func onDataResponseHandler(_ handler: @escaping (Data) -> Void) -> Self {
         dataResponseHandler = handler
         return self
     }
     
-    func onStringResponseHandler(_ handler: @escaping (String) -> Void) -> THttpResource {
+    func onStringResponseHandler(_ handler: @escaping (String) -> Void) -> Self {
         stringResponseHandler = handler
         return self
     }
     
-    func onErrorHandler(_ handler: @escaping (Error) -> Void) -> THttpResource {
+    func onErrorHandler(_ handler: @escaping (Error) -> Void) -> Self {
         errorHandler = handler
         return self
     }

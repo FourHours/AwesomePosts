@@ -51,6 +51,7 @@ struct TTableDataSource {
 typealias TSection = TTableDataSource.TableSection
 
 class TTableView: NSObject {
+    
     enum TableCellType {
         case Value1
         case Nib
@@ -85,9 +86,6 @@ class TTableView: NSObject {
             bindingTableView?.register(UINib(nibName: customClassName, bundle: nil), forCellReuseIdentifier: customClassName)
         default: break
         }
-        
-        
-        
         return self
     }
     
@@ -97,7 +95,6 @@ class TTableView: NSObject {
     }
     
     func customTableCellName(_ name: String) -> Self {
-        
         if debugging {
             print("customTableCellName = \(name)")
         }
@@ -138,14 +135,14 @@ extension TTableView: UITableViewDelegate, UITableViewDataSource {
         
         switch cellType {
         case .Value1:
-            let tableCell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellItentifier())
+            let tableCell = TBasicTableCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellItentifier())
             tableCell.configure(row: dataSource[indexPath])
             return tableCell
             
         case .Nib, .Dynamic:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TCustomTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: customClassName, for: indexPath) as! TTableCellDatasource
             cell.configure(row: dataSource[indexPath])
-            return cell
+            return cell as! UITableViewCell
         }
     }
     

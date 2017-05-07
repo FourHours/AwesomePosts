@@ -9,28 +9,16 @@
 import Foundation
 import ObjectMapper
 
-public protocol TTableCell: class{
+public protocol TTableCellDatasource: class{
     func configure(row: Mappable)
 }
 
-extension TTableCell {
-
-}
-
-extension TTableCell where Self: UITableViewCell {
+class TBasicTableCell: UITableViewCell, TTableCellDatasource {
     public func configure(row: Mappable) {
-        if let person = row as? TBasicTableRow {
-            textLabel?.text = person.title
+        if let rowData = row as? TBasicTableRow {
+            textLabel?.text = rowData.title
         }
-//        textLabel?.text = row.text
-//        detailTextLabel?.text = row.detailText
-//        imageView?.image = row.image
-//        accessoryType = row.accessory.type
-//        accessoryView = row.accessory.view
     }
 }
 
-extension UITableViewCell: TTableCell {
-
-}
 

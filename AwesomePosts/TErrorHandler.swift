@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 
-protocol ErrorHandler {
+protocol TErrorHandler {
     func handleError(_ error: Error)
 }
 
-extension ErrorHandler {
+extension TErrorHandler {
     func handleError(_ error: Error) {
         print(error.localizedDescription)
     }
 }
 
-extension ErrorHandler where Self: UIViewController {
+extension TErrorHandler where Self: UIViewController {
     func handleError(_ error: Error) {
         let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))

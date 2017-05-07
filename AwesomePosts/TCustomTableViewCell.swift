@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 import ObjectMapper
 
+/*
+    This is an example to implement custom table cell
+ */
 
-class TCustomTableViewCell: UITableViewCell{
+class TCustomTableViewCell: UITableViewCell, TTableCellDatasource {
     
     @IBOutlet weak var headline: UILabel!
     

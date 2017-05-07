@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class TDemoTableViewController: UITableViewController, TInjectProperty {
+class TDemoTableViewController: UITableViewController, TPropertyDatasource {
     var props: Dictionary<String, Any>?
 
     var builder: TTableView?

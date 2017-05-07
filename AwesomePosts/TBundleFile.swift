@@ -26,17 +26,17 @@ class TBundleFile {
         self.ext = ext
     }
     
-    func dataType(_ type: DataType) -> TBundleFile {
+    func dataType(_ type: DataType) -> Self {
         self.type = type
         return self
     }
 
-    func onSuccessDictionayHandler(_ handler: @escaping ([String: AnyObject]) -> Void) -> TBundleFile {
+    func onSuccessDictionayHandler(_ handler: @escaping ([String: AnyObject]) -> Void) -> Self {
         onSuccessDictionayHandler = handler
         return self
     }
     
-    func onSuccessArrayHandler(_ handler: @escaping ([Any]) -> Void) -> TBundleFile {
+    func onSuccessArrayHandler(_ handler: @escaping ([Any]) -> Void) -> Self {
         onSuccessArrayHandler = handler
         return self
     }

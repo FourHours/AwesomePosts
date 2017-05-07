@@ -13,7 +13,7 @@ import ReactiveCocoa
 import ReactiveSwift
 import Static
 
-class PostsViewController: UIViewController, ErrorHandler {
+class PostsViewController: UIViewController, TErrorHandler {
     // MARK: - UI Controls
     @IBOutlet weak var tableView: UITableView!
     lazy var refreshControl: UIRefreshControl = {
